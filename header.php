@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-  <head>
+<head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,23 +23,31 @@
     <![endif]-->
     
     <?php wp_head(); ?>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
-        </nav>
-      </div>
+        <div class="container">
+            <nav class="blog-nav">
+            <?php
+                wp_nav_menu( array(
+                    'menu'              => 'primary',
+                    'theme_location'    => 'primary',
+                    'depth'             => 2,
+                    'container'         => 'div',
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'bs-example-navbar-collapse-1',
+                    'menu_class'        => 'nav navbar-nav',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker())
+                );
+            ?>
+            </nav>
+        </div>
     </div>
 
     <div class="container">
-      <div class="blog-header">
-        <h1 class="blog-title"><?php bloginfo('name'); ?></h1>
-        <p class="lead blog-description"><?php bloginfo('description'); ?></p>
-      </div>
+        <div class="blog-header">
+            <h1 class="blog-title"><?php bloginfo('name'); ?></h1>
+            <p class="lead blog-description"><?php bloginfo('description'); ?></p>
+        </div>

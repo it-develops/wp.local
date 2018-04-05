@@ -217,4 +217,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
    .box .fa {
      font-size: 45px !important;
      margin-bottom: 10px;
-   } 
+   }
+
+   .blog-nav a {
+       color: #fff;
+   }
+   .blog-nav a:hover {
+       color: #666;
+   }
